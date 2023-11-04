@@ -13,8 +13,8 @@ class TestController(
     @GetMapping
     fun test() {
         val event = Event("Hello")
-        eventPublisher.publishEvent(event)
-        eventPublisher.publishEvent(event)
-        eventPublisher.publishEvent(event)
+        eventPublisher.publish(event)
+        eventPublisher.publish(event)
+        eventPublisher.publish(event)
     }
 }

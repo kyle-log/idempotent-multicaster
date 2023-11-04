@@ -4,7 +4,7 @@ import org.springframework.context.ApplicationEvent
 import org.springframework.context.ApplicationListener
 import org.springframework.context.PayloadApplicationEvent
 import org.springframework.context.event.AbstractApplicationEventMulticaster
-import org.springframework.context.event.ApplicationListenerMethodAdapter
+import org.springframework.context.event.GenericApplicationListener
 import org.springframework.core.ResolvableType
 import org.springframework.util.ErrorHandler
 
@@ -33,7 +33,7 @@ class IdempotentApplicationEventMulticaster(
     }
 
     private fun invokeListener(listener: ApplicationListener<*>, event: ApplicationEvent) {
-        if ((listener is ApplicationListenerMethodAdapter) &&
+        if ((listener is GenericApplicationListener) &&
             (event is PayloadApplicationEvent<*>) &&
             (event.payload is IdempotentEvent)
         ) {

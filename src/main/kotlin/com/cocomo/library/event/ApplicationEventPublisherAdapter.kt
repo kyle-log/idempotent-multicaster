@@ -6,7 +6,7 @@ class ApplicationEventPublisherAdapter(
     private val applicationEventPublisher: ApplicationEventPublisher,
 ) : EventPublisher {
 
-    override fun <E : Any> publishEvent(event: E) {
+    override fun <E : Any> publish(event: E) {
         applicationEventPublisher.publishEvent(event)
     }
 
