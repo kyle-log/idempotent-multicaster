@@ -1,5 +1,8 @@
 package com.cocomo.library.idempotent
 
 interface IdempotentEvent {
-    val uuid: String
+    val idempotentKey: IdempotentKey
 }
+
+@JvmInline
+value class IdempotentKey(val value: String)

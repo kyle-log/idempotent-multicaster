@@ -7,6 +7,6 @@ class EventHandler {
 
     @EventListener
     fun handle(event: Event) {
-        println(event)
+        println("Executed. key: ${event.idempotentKey}")
     }
 }
