@@ -1,1 +1,1 @@
-rootProject.name = "spring-idempotent-multicaster"
+rootProject.name = "idempotent-multicaster"
